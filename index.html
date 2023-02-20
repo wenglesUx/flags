@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>flags
+
+    </title>
+    <style>
+        body{
+            display:flex;
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+            overflow: hidden;
+        }
+        .inputs{
+            height:100vh;
+            flex:1;
+            background-color:gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .form{
+            display: flex;
+            flex-direction:column;
+            gap:0.5rem;
+            position: relative;
+            
+        }
+
+        #input-desc1,
+        #input-desc2,
+        #input-desc3{
+            position: absolute;
+            height: 150px;
+            width:150px;
+            background-color:rgba(222,222,222,0.4);
+            left:0;
+            margin-left: -100%;
+            border-radius:15px;
+            display:none
+        }
+        #initial-value,
+        #final-value,
+        #number-count
+
+        {
+            height:50px;
+            border-radius:15px;
+            border:none;
+            text-align: center;
+            
+        }
+        #buttons{
+            width:200px;
+            height: 40px;
+            
+            position: relative;
+            display:inline-flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #start,
+        #stop{
+            position: absolute;
+            height: 100%;
+            width: 90%;
+            border-radius: 10px;
+            border: none;
+            font-size: 15px;
+            text-transform: uppercase;
+            color:white;
+            cursor:pointer;
+            
+
+        }
+        #start{
+            background-color: rgb(112, 112, 247);
+            display: block;
+            transition: 0.5s;
+        }
+        #stop{
+            background-color:rgb(255, 90, 90);
+            display: none;
+            transition: 0.5s;
+        }
+
+        .display{
+            background-color:rosybrown;
+            width:50%;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            flex-direction:column;
+            position: relative;
+
+        }
+        .contentb{
+            content:'';
+            height: 320px;
+            width: 320px;
+            border-radius: 50%;
+            font-size:100px;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            background-color: rgb(0, 136, 255);
+            opacity: 0.7;
+            position: absolute;
+            z-index: 3;
+            overflow: hidden;
+
+        }
+        .contentb span{
+            height: 100%;
+            width:100px;
+            background-color: green;
+            animation: borde 0.7s ease-in-out infinite;
+        }
+        .content{
+        z-index: 99;
+           border: 5px solid transparent;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            font-size:100px;
+            font-weight:bold;
+            color:white;
+            text-shadow:1px 1px  7px gray;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            position: absolute;
+          
+            background-color: rgb(250, 127, 127);
+            
+
+        }
+        @keyframes border{
+            to{transform: rotate(0deg);}
+            from{transform: rotate(-360deg);}
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="inputs">
+       
+        <div class="form">
+            
+            <input type="number" name="" id="initial-value" value="">
+
+                <span id="input-desc1">desc 1</span>
+                
+            <input type="number" name="" id="final-value" value="">
+
+                <span id="input-desc2"> desc 2</span>
+
+            <input type="number" name="" id="number-count" value="">
+
+                 <span id="input-desc3"> desc 3</span>
+
+            <div id="buttons">
+                <button id="start">Start</button>
+                 <button id="stop">Stop</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="display">
+        <div id="topInfo">top</div>
+        <div class="contentb">
+            <span></span>
+        </div>
+            <div class="content">
+                
+                <span></span>
+                
+            </div>
+        <div id="bottomInfo">bottom</div>
+        
+    </div>
+
+    <script src="/script.js"></script>
+   
+</body>
+</html>
